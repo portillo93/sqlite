@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Noe\AndroidStudioProjects\sqlite\app\app.iml" filepath="C:\Users\Noe\AndroidStudioProjects\sqlite\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/sqlite.iml" filepath="$PROJECT_DIR$/sqlite.iml" />
+      <module fileurl="file://C:\Users\Noe\AndroidStudioProjects\sqlite\sqlite.iml" filepath="C:\Users\Noe\AndroidStudioProjects\sqlite\sqlite.iml" />
     </modules>
   </component>
 </project>

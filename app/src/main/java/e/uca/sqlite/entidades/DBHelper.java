@@ -56,7 +56,27 @@ public class DBHelper extends SQLiteOpenHelper {
         String [] parametros = {dui};
         String [] campos = {CAMPO_NOMBRE};
         try{
-            Cursor cursor =
+            Cursor cursor = db.query(TABLA_USUARIO, campos,CAMPO_ID+"=", parametros, null, null, null);
+            cursor.moveToFirst();
+            p=new Persona(dui,cursor.getString(0));
+        }catch (Exception e){
+            p=null;
         }
+        return p;
+    }
+    public boolean editUser(Persona p){
+        String [] parametros = {p.getDui()};
+        String [] campos = {CAMPO_NOMBRE};
+        ContentValues values = new ContentValues();
+        values.put(CAMPO_NOMBRE,p.getNombre());
+        db.update(TABLA_USUARIO,values,CAMPO_ID+"=?", parametros);
+        Toast.makeText(context, "Usuario Actualizao con exito", Toast.LENGTH_LONG).show();
+        return  true;
+    }
+    public boolean deleteUser(String dui){
+        String [] parametro = {dui};
+        db.delete(TABLA_USUARIO, CAMPO_ID+"=?",parametro);
+        Toast.makeText(context,"Usuario Eliminado con exito",Toast.LENGTH_LONG).show();
+        return true;
     }
 }
